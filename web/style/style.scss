@@ -37,24 +37,12 @@ header{
     padding: 0px 0px 2% 0px;
     text-decoration: none;   
 }
-.main-nav li{
-    list-style: none;
-    display: inline-flex;
-    padding-right: 10px;
-    font-weight: bold;
-    font-size: 16px
+
+
+#m_menu{
+    display: none;
 }
 
-.main_header__right_menu {
-    flex: 1;
-    align-self: stretch;
-}
-.m_menu{
-    display: none;
-}
-.closebtn{
-    display: none;
-}
 a{
     text-decoration: none;
     color: $blackColor;
@@ -105,7 +93,9 @@ a{
     
 }
 
-
+/*form style start header*/
+    @import 'header';
+/*form style end*/
 /*form style start Login*/
     @import 'login';
 /*form style end*/
