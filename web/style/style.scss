@@ -81,7 +81,9 @@ a{
     font-weight: bold;
     color: $primaryColor;
 }
- 
+.left-sidebar ul{
+    display: grid;
+} 
 
 .footer{
     display:flex;

@@ -5,12 +5,19 @@
      box:after {
        height: 78%;
      }
-   }
-   
+     .logo{
+         height: 100%;
+         width: 100%
+    }
+}
    
    @media only screen and (max-width: 991px) {
        .main_header{
            padding: 5px 0px;
+       }
+
+       .cart-icon{
+           display: inline-block;
        }
        box:after {
            height: 79%;
@@ -57,6 +64,8 @@
         .price:before {
            content: ' @ ';
        }
+
+       
        .footer_copyright {
            flex: 1;
            font-size: 12px;
@@ -223,9 +232,15 @@
     .price:before {
        content: ' @ ';
        }    
-   
-   }
 
+        .login-box, .signup-box{
+            flex-basis: 80%;
+            padding-left: 0px;
+        }
+        .login-box-form-section, .signup-box-form-section{
+            flex-basis: 80%;
+        }
+   }
    @media only screen and  (max-width: 576px) {
     .prod-info {
       height: 58%;
@@ -274,5 +289,5 @@
         .buy-now{
             padding: 8px;
         }
-
+        
     }
