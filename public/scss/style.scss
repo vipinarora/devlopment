@@ -865,9 +865,15 @@ input:focus ~ .highlight {
     float: left;
     //margin-top: 10px;
   }
-  .prod-title {
-    margin-bottom: 30px;
+  .prod-wrapper {
+    .prod-title {
+      margin-bottom: 0px;
+      h3 {
+        min-height: 40px;
+      }
+    }
   }
+  
   .buy-now {
     width: 100%;
     padding: 13px;
@@ -879,14 +885,17 @@ input:focus ~ .highlight {
       content: ' @ ';
     }
   }
-  .login-box, .signup-box {
-    flex-basis: 80%;
-    padding-left: 0px;
+  .main-login-container, .main-signup-container{
+    .login-container, .signup-container{
+      .login-box, .signup-box {
+        flex-basis: 80%;
+        padding-left: 0px;
+      }
+      .login-box-form-section, .singup-box-form-section{
+        flex-basis: 80%;
+      }
+    }
   }
-  .login-box-form-section, .singup-box-form-section{
-    flex-basis: 80%;
-  }
-  
 }
 
 @media only screen and (max-width: 576px) {
