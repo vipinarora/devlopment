@@ -8,9 +8,6 @@
     "start": "node ./bin/www",
     "start:dev": "npm run compile:sass-dev > out.log | npm run compile:js-dev | nodemon ./bin/www"
   },
- 
-
-
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",

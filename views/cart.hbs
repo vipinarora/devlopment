@@ -1,7 +1,7 @@
-
-    <div class="cart-container">
-        <section class="cart-total-items">
-            <div class="wrapper">
+<div class="cart-container">
+    <div class="cart-wrapper">
+            <section class="cart-total-items">
+            <div class="">
                 <div>
                     <h1>My Cart (<span id="js-cart-count-header">{{this.cartCount}}</span> items)</h1> 
                 </div>
@@ -9,7 +9,7 @@
         </section>
         {{#each cartProducts}}
         <section class="cart-prod-box" id="prod_{{this.id}}">
-            <div class="wrapper">
+            
                 <div class="cart-product-container">
                     <div class="cart-prod-img">
                         <img src="{{this.imageURL}}" alt="{{this.name}}" />
@@ -24,19 +24,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </section>
         {{/each}}
         <section class="cart-adds">
-            <div class="wrapper">
+            
                 <div class="cart-adds-info">
                     <div class="cart-adds-img"><img src="/static/images/lowest-price.png" alt="Baby Care" /></div>
                     <div class="cart-adds-title">You won't find it cheaper anywhere</div>
                 </div>
-            </div>
+            
         </section>
         <section class="cart-prod-box cart-footer-box">
-            <div class="wrapper">
+            
                 <div class="cart-footer">
                 	<div class="cart-footer-info">
                 		<p>Promo code can be applied on payment page</p>
@@ -45,6 +45,7 @@
                 		<span class="cart-text">Proceed to checkout</span><span id="js-cart-amt" class="cart-amt">{{totalAmt}}</span><span><i class="right arrow"></i></span >	
                 	</button>
                 </div>
-            </div>
+            
         </section>
     </div>
+</div>
