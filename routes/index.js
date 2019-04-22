@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var path = require('path');
 
 var banners = require('../public/data/banners/index.get.json');
 var prodCategories = require('../public/data/categories/index.get.json');
@@ -9,6 +10,13 @@ var cartMsg = require('../public/data/addToCart/index.post.json');
 
 
 /* GET home page. */
+
+router.get('/home', function(req, res, next) {
+  ActiveBanners = banners.filter(banner => banner.isActive);
+  ActiveCategories = prodCategories.filter(category => category.enabled);
+  res.sendFile('C:/Users/Harry/Desktop/spwork/devlopment/views/header.html');//, {banners:ActiveBanners,categories:ActiveCategories});
+
+});
 
 router.get('/', function(req, res, next) {
   ActiveBanners = banners.filter(banner => banner.isActive);

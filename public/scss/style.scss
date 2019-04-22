@@ -280,7 +280,7 @@ input:focus ~ .highlight {
 
 @keyframes inputHighlighter {
   from {
-    background: #4a89dc;
+    background:$thPrimaryColor;
   }
 
   to {
