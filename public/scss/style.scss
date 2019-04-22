@@ -7,7 +7,7 @@ $whiteColor:#ffffff;
 $blackColor:#000000;
 
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,6 +31,8 @@ img {
   width: 80%;
   margin: 0px auto;
 }
+
+
 %arrowProp {
   border: solid #fff;
   border-width: 0 2px 2px 0;
@@ -758,8 +760,16 @@ input:focus ~ .highlight {
             font-size: inherit;
             margin-top: 5px;
           }
+          
         }
-        
+        .m_menu_close{
+          display: none;
+          width: 0%;
+        }
+        .m_menu_open{
+        display: block;
+        width: 100%;
+        }
         .menu ul li {
           display: block;
           a {

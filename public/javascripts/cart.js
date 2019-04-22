@@ -1,50 +1,56 @@
-var cart = document.getElementsByClassName('js-manage-cart');
-Array.from(cart).forEach(function(element) {
-  element.addEventListener('click', function(e){
-    var prodId = e.target.getAttribute("data-prod-id");
-      if(e.target.classList.contains('js-plus'))
-       {
-         var cartCount = document.getElementById("js-cart-count-header").textContent;    
-         ++cartCount;
-          addCartProduct(prodId);        
+(function(){
+  var cart = document.getElementsByClassName('js-manage-cart');
+  Array.from(cart).forEach(function(element) {
+    element.addEventListener('click', function(e){
+      var prodId = e.target.getAttribute("data-prod-id");
+        if(e.target.classList.contains('js-plus'))
+        {
+          var cartCount = document.getElementById("js-cart-count-header").textContent;    
+          ++cartCount;
+            addCartProduct(prodId);        
+            var prodPrice = +document.getElementById('js-prod-price_'+prodId).textContent;
+            var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent + 1;
+            document.getElementById('js-cart-prod-qnty_'+prodId).textContent = prodQty;
+            document.getElementById('js-prod-total_'+prodId).textContent = prodPrice * prodQty;
+            var cartTotal = +document.getElementById('js-cart-amt').textContent;          
+            document.getElementById('js-cart-amt').textContent = cartTotal + prodPrice; 
+            document.getElementById("js-cart-count-header").textContent = cartCount;
+        }
+        else if(e.target.classList.contains('js-minus'))
+        {
+          var cartCount = document.getElementById("js-cart-count-header").textContent;            
+          --cartCount;
+          
           var prodPrice = +document.getElementById('js-prod-price_'+prodId).textContent;
-          var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent + 1;
+          var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent;
+          var removeTag = false;
+          if(prodQty == 1){
+            removeTag = true;
+          }
+          --prodQty;
           document.getElementById('js-cart-prod-qnty_'+prodId).textContent = prodQty;
           document.getElementById('js-prod-total_'+prodId).textContent = prodPrice * prodQty;
-          var cartTotal = +document.getElementById('js-cart-amt').textContent;          
-          document.getElementById('js-cart-amt').textContent = cartTotal + prodPrice; 
+          
+          
+          var cartTotal = +document.getElementById('js-cart-amt').textContent;
+          document.getElementById('js-cart-amt').textContent = cartTotal - prodPrice;
+          if(removeTag) {
+            document.getElementById("prod_"+prodId).remove();
+          }
           document.getElementById("js-cart-count-header").textContent = cartCount;
-       }
-       else if(e.target.classList.contains('js-minus'))
-       {
-        var cartCount = document.getElementById("js-cart-count-header").textContent;            
-         --cartCount;
-        debugger
-        var prodPrice = +document.getElementById('js-prod-price_'+prodId).textContent;
-        var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent;
-        var removeTag = false;
-        if(prodQty == 1){
-          removeTag = true;
+          subCartProduct(prodId);
         }
-        --prodQty;
-        document.getElementById('js-cart-prod-qnty_'+prodId).textContent = prodQty;
-        document.getElementById('js-prod-total_'+prodId).textContent = prodPrice * prodQty;
-        var cartTotal = +document.getElementById('js-cart-amt').textContent;
-        document.getElementById('js-cart-amt').textContent = cartTotal - prodPrice;
-        if(removeTag) {
-          document.getElementById("prod_"+prodId).remove();
+        else
+        {
+          ++cartCount;
+          addCartProduct(prodId);
         }
-        document.getElementById("js-cart-count-header").textContent = cartCount;
-        subCartProduct(prodId);
-       }
-       else
-       {
-         ++cartCount;
-         addCartProduct(prodId);
-       }
-      
-    });
-});
+        
+      });
+  });
+
+  const cartTotal = getData('/api/cartCount').then(res => setCartData(res.cartCount));
+})();
 
 function addCartProduct(prodId)
 {
@@ -94,4 +100,3 @@ function setCartData(count=0)
       el.innerHTML = count;
     });
 }
-const cartTotal = getData('/api/cartCount').then(res => setCartData(res.cartCount));

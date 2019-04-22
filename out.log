@@ -1,0 +1,39 @@
+
+> myapp@0.0.0 compile:sass-dev C:\Users\viparora\Desktop\spwork\devlopment
+> node-sass  -rw public/scss -o public/css/ -w
+
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css
+=> changed: C:\Users\viparora\Desktop\spwork\devlopment\public\scss\style.scss
+Rendering Complete, saving .css file...
+Wrote CSS to C:\Users\viparora\Desktop\spwork\devlopment\public\css\style.css

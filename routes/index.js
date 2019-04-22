@@ -11,13 +11,6 @@ var cartMsg = require('../public/data/addToCart/index.post.json');
 
 /* GET home page. */
 
-router.get('/home', function(req, res, next) {
-  ActiveBanners = banners.filter(banner => banner.isActive);
-  ActiveCategories = prodCategories.filter(category => category.enabled);
-  res.sendFile('C:/Users/Harry/Desktop/spwork/devlopment/views/header.html');//, {banners:ActiveBanners,categories:ActiveCategories});
-
-});
-
 router.get('/', function(req, res, next) {
   ActiveBanners = banners.filter(banner => banner.isActive);
   ActiveCategories = prodCategories.filter(category => category.enabled);
