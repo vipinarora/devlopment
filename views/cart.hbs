@@ -1,0 +1,51 @@
+<div class="cart-container">
+    <div class="cart-wrapper">
+            <section class="cart-total-items">
+            <div class="">
+                <div>
+                    <h1>My Cart (<span id="js-cart-count-header">{{this.cartCount}}</span> items)</h1> 
+                </div>
+            </div>
+        </section>
+        {{#each cartProducts}}
+        <section class="cart-prod-box" id="prod_{{this.id}}">
+            
+                <div class="cart-product-container">
+                    <div class="cart-prod-img">
+                        <img src="{{this.imageURL}}" alt="{{this.name}}" />
+                    </div>
+                    <div class="cart-prod-info">
+                        <div class="cart-prod-title">
+                            <h3>{{this.name}}</h3>
+                        </div>
+                        <div class="cart-prod">
+                            <div class="cart-prod-qnty-box"><button data-prod-id={{this.id}}  class="cart-prod-btn minus js-minus js-manage-cart">&minus;</button><span class="cart-prod-qnty" id="js-cart-prod-qnty_{{this.id}}"> {{this.count}} </span><button data-prod-id={{this.id}} class="cart-prod-btn plus js-plus js-manage-cart">&plus;</button><span class="prod-multiply">&#10005;</span><span class="prod-price" id="js-prod-price_{{this.id}}">{{this.price}}</span></div>
+                            <div class="cart-prod-total"><span class="currency-icon">Rs.</span><span id="js-prod-total_{{this.id}}" class="prod-total">{{math this.price "*" this.count}}</span></div>
+                        </div>
+                    </div>
+                </div>
+            
+        </section>
+        {{/each}}
+        <section class="cart-adds">
+            
+                <div class="cart-adds-info">
+                    <div class="cart-adds-img"><img src="/static/images/lowest-price.png" alt="Baby Care" /></div>
+                    <div class="cart-adds-title">You won't find it cheaper anywhere</div>
+                </div>
+            
+        </section>
+        <section class="cart-prod-box cart-footer-box">
+            
+                <div class="cart-footer">
+                	<div class="cart-footer-info">
+                		<p>Promo code can be applied on payment page</p>
+                	</div>
+                	<button class="cart-footer-action">
+                		<span class="cart-text">Proceed to checkout</span><span id="js-cart-amt" class="cart-amt">{{totalAmt}}</span><span><i class="right arrow"></i></span >	
+                	</button>
+                </div>
+            
+        </section>
+    </div>
+</div>

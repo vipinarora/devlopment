@@ -1,0 +1,45 @@
+
+    <div class="wrapper">
+        <section class="plp-container">
+            <aside class="plp-cat">
+                <nav class="left-sidebar">
+                    <ul>
+                        {{#each categories}}
+                         {{#if_eq this.id ../currentCat}}
+                            <li class="active"><a href="/category/{{this.id}}">{{this.name}}</a></li>
+                        {{else}}
+                            <li class=""><a href="/category/{{this.id}}">{{this.name}}</a></li>
+                        {{/if_eq}}
+                        {{/each}}
+                    </ul>
+                </nav>
+            </aside>
+            <div class="plp-wrapper">
+                
+                <div class="plp-list-row">
+                    {{#each products}}
+                    <div class="prod-wrapper">
+                        <div class="prod-title">
+                                <h3 tabindex="0">{{this.name}}</h3>
+                        </div>
+                        <div class="prod-img">
+                            <img tabindex="0" src="{{this.imageURL}}" alt="{{this.name}}"/>
+                        </div>               
+                        <div class="prod-info">
+                            <p tabindex="0">
+                                {{this.description}}
+                            </p>
+                        </div>         
+                        <div class="prod-price-container">
+                            <a href="javascript:;" data-prod-id="{{this.id}}" class="buy-now js-manage-cart">
+                                Buy Now
+                                <span class="price">Rs. {{this.price}}</span> 
+                            </a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+    </div>
+    

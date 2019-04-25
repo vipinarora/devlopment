@@ -1,0 +1,12 @@
+<aside class="plp-cat">
+    <nav class="left-sidebar">
+        {{#list categories}}
+            <a href="/category/{{this.id}}">{{this.name}}</a>
+        {{/list}}
+        <ul>
+            {{#each categories}}
+            <li><a href="/category/{{this.id}}">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </nav>
+</aside>

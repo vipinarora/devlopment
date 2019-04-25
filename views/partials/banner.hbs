@@ -1,0 +1,19 @@
+<section class="main-slider">
+        <div class="wrapper">
+            <div id="slider" class="crousel-container box slide-container">
+                {{#each banners}}
+                    <img tabindex="" class="mySlides" src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}">
+                {{/each}}
+                
+                <div class="slide-btn">
+                    <button class="left-btn" onclick="plusDivs(-1)">PREV</button>
+                    <button class="right-btn" onclick="plusDivs(1)">NEXT</button>
+                </div>
+                <div class="slide-dots">
+                    {{#each banners}}
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv({{math @index "+" 1}})"></span>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
