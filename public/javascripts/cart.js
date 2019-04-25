@@ -5,14 +5,23 @@
       var prodId = e.target.getAttribute("data-prod-id");
         if(e.target.classList.contains('js-plus'))
         {
-          var cartCount = document.getElementById("js-cart-count-header").textContent;    
+          var cartCount = document.getElementById("js-cart-count-header").textContent;  
           ++cartCount;
-            addCartProduct(prodId);        
+                   
             var prodPrice = +document.getElementById('js-prod-price_'+prodId).textContent;
-            var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent + 1;
+            var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent;
+            var cartTotal = +document.getElementById('js-cart-amt').textContent;
+            if(isNaN(prodPrice) || isNaN(prodQty) || isNaN(cartTotal))
+            {
+              alert('Something Wrong!');
+              window.location.reload();
+              return;
+            }
+            addCartProduct(prodId); 
+            ++prodQty;
             document.getElementById('js-cart-prod-qnty_'+prodId).textContent = prodQty;
             document.getElementById('js-prod-total_'+prodId).textContent = prodPrice * prodQty;
-            var cartTotal = +document.getElementById('js-cart-amt').textContent;          
+                      
             document.getElementById('js-cart-amt').textContent = cartTotal + prodPrice; 
             document.getElementById("js-cart-count-header").textContent = cartCount;
         }
@@ -23,7 +32,14 @@
           
           var prodPrice = +document.getElementById('js-prod-price_'+prodId).textContent;
           var prodQty = +document.getElementById('js-cart-prod-qnty_'+prodId).textContent;
+          var cartTotal = +document.getElementById('js-cart-amt').textContent;
           var removeTag = false;
+          if(isNaN(prodPrice) || isNaN(prodQty) || isNaN(cartTotal))
+          {
+            alert('Something Wrong!');
+            window.location.reload();
+            return; 
+          }
           if(prodQty == 1){
             removeTag = true;
           }
@@ -32,7 +48,7 @@
           document.getElementById('js-prod-total_'+prodId).textContent = prodPrice * prodQty;
           
           
-          var cartTotal = +document.getElementById('js-cart-amt').textContent;
+          
           document.getElementById('js-cart-amt').textContent = cartTotal - prodPrice;
           if(removeTag) {
             document.getElementById("prod_"+prodId).remove();
